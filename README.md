@@ -3,4 +3,4 @@
 
 Wireframe de la pagína Inicial.
 
-![Pagina Inicial](http://imgur.com/nCn5Lo0)
+![Pagina Inicial](http://i.imgur.com/nCn5Lo0.png)
