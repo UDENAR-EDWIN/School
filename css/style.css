@@ -1,10 +1,23 @@
+body {background: #dddddd;}
+
+footer {
+  height: 100px;
+  background: #bababa;
+  margin-top: 50px;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 5px;
+}
+
 .icono-school {font-size: 30px;}
 .title {font-size: 20px;}
 
 .jumbotron {
   background-image: url(../images/bloque-ing.jpg);
   background-position: bottom;
-  height: 400px;
+  height: 450px;
 }
 
 .jumbotron>.container>h1 {
@@ -55,3 +68,41 @@
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
+.login-button {
+  margin-top: 20px;
+  float: right;
+}
+
+.pl {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #000000;
+  font-family: sans-serif;
+}
+
+.pl-student {
+  background: #4f4759;
+  border-color: #120d1a;
+}
+
+.pl-teacher {
+  background: #572c2a;
+  border-color: #110303;
+}
+
+.pl-img {
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.pl-img>img {
+  width: 200px;
+  height: 200px;
+}
+
+.title-teach {color: #959595;}
