@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Registro de Estudiantes</title>
+  <!-- Elementos CSS para el diseño -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style-reg.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <!-- Boton tipo Hamburguesa para tamaños de pantalla pequeños -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+            <span class="sr-only">MENU</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Icono de nuestra barra de navegación -->
+          <a href="index.html" class="navbar-brand">
+            <span class="glyphicon glyphicon-education icono-school"></span>
+            <span class="title">Academy Student</span>
+          </a>
+        </div>
+        <!-- Elementos de nuestra barra de Navegación -->
+        <div class="collapse navbar-collapse" id="navbar-1">
+          <!-- Item para Busquedas -->
+          <form action="" class="navbar-form navbar-right form-horizontal" role="search">
+            <div class="form-group">
+              <div class="col-xs-10">
+                <input type="text" class="form-control" placeholder="Buscar">
+              </div>
+              <button type="button" class="btn btn-primary col-xs-2"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </form>
+          <!-- Items principales de la Barra de Navegación -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.php">Inicio</a></li>
+            <li><a href="#">Información</a></li>
+            <!-- Lista desplegable -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Articulos <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Salud</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Finanzas</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="jumbotron cont-wallp">
+    <figure class="container-fluid cont-wallp">
+      <img src="images/user_fond.png" alt="Fondo del Usuario" class="img-responsive center-block wallpaper-user"/>
+    </figure>
+    <figure><img src="images/img_user.png" alt="Imagen de Usuario" class="img-responsive img-circle img-user col-xs-offset-1"/></figure>
+  </div>
+  <div class="container">
+    <div class="row">
+      <header class="col-md-12 title-form">
+        <h1>Registro Estudiantil</h1>
+      </header>
+    </div>
+    <form action="php/registrar.php" method="post">
+      <!-- Descripción Personal -->
+      <div class="col-sm-12 col-md-4 personal-description">
+          <!-- Foto personal -->
+          <div class="col-sm-4 col-md-12 pl-person">
+            <!-- <div class="img-person"></div> -->
+            <figure><img src="images/user1.png" alt="Imagen de Usuario" class="img-responsive img-circle center-block img-person" id="img-usuario" /></figure>
+            <span class="btn btn-file btn-primary">
+                CAMBIAR<input type="file">
+            </span>
+          </div>
+          <!-- Información extra del estudiante -->
+          <div class="col-sm-8 col-md-12 form-group">
+              <label for="txt-description">Descripción Personal</label>
+              <textarea rows="9" placeholder="Comentanos más de ti.. :)" id="txt-description" class="form-control" name="txt-description"></textarea>
+          </div>
+      </div>
+      <!-- Descripción General -->
+      <div class="col-sm-12 col-md-7 personal-form">
+        <div class="form-group elm"> <!-- Nombres del Estudiante -->
+          <label for="txt-name">Nombres: </label>
+          <input type="text" id="txt-name" placeholder="Nombres completos porfavor" class="form-control" name="txt-name">
+        </div>
+        <div class="form-group elm"> <!-- Apellidos del Estudiante -->
+          <label for="txt-sname">Apellidos: </label>
+          <input type="text" id="txt-sname" placeholder="Apellidos completos porfavor" class="form-control" name="txt-sname">
+        </div>
+        <div class="form-group col-md-6 elm"> <!-- Codigo del Estudiante -->
+          <label for="txt-cod">Codigo: </label>
+          <input type="number" id="txt-cod" placeholder="Codigo Estudiantil" class="form-control" name="txt-cod">
+        </div>
+        <div class="form-group col-md-6 elm"> <!--Facultad del Estudiante-->
+          <label for="sl-fact">Facultad: </label>
+          <select class="form-control" id="sl-fact" name="sl-fact">
+            <option>Ingeniería</option>
+            <option>Economia</option>
+            <option>Derecho</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6 elm"> <!--Tipo de Documento de Identidad-->
+          <label for="type-id">Tipo ID: </label>
+          <select class="form-control" id="type-id" name="sl-id">
+            <option>Cedula</option>
+            <option>Tarjeta de Identidad</option>
+            <option>Pasaporte</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6 elm"> <!--Numero de Documento de Identidad-->
+          <label for="txt-id">Documento ID: </label>
+          <input type="number" id="txt-id" placeholder="Documento de Identidad" class="form-control" name="txt-id">
+        </div>
+        <div class="form-group col-md-6 elm"> <!--Numero Celular-->
+          <label for="txt-cel">Celular: </label>
+          <input type="number" id="txt-cel" placeholder="Numero Celular" class="form-control" name="txt-cel">
+        </div>
+        <div class="form-group col-md-6 elm"> <!-- Genero del Estudiante -->
+          <label for="optradio">Genero:</label>
+          <div class="radio">
+            <label><input type="radio" name="rd-gen">Femenino</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="rd-gen">Masculino</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="rd-gen">Otro</label>
+          </div>
+        </div>
+        <button type="submit" name="btn-reg" class="btn btn-primary center-block">REGISTRAR</button>
+    </form>
+  </div>
+  <!-- Elementos JavaScirpt para la interactividad-->
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>

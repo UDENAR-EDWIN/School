@@ -27,7 +27,7 @@
           </a>
         </div>
         <!-- Elementos de nuestra barra de Navegación -->
-        <div class="collapsed navbar-collapsed" id="navbar-1">
+        <div class="collapse navbar-collapse" id="navbar-1">
           <!-- Item para Busquedas -->
           <form action="" class="navbar-form navbar-right form-horizontal" role="search">
             <div class="form-group">
@@ -63,21 +63,50 @@
     <div class="container">
       <h1>Universidad de Nariño</h1>
       <h2>Construyendo el Futuro</h2>
-      <button type="button" id="btn_login" class="btn btn-primary login-button">INGRESAR</button>
+      <button type="button" id="btn_login" class="btn btn-primary login-button btn-lg" data-toggle="modal" data-target="#mod-login">INGRESAR</button>
     </div>
   </div>
   <div class="container">
     <div class="pl pl-student col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2">
-      <div class="pl-img"><img src="images/student.png" alt=""></div>
+      <div class="pl-img"><img src="images/student.png" class="img-responsive center-block" alt="Imagen responsive"></div>
       <h3>Estudiantes</h3>
       <p>Formulario de registro para los estudiantes pertenecientes a la Universidad de Nariño</p>
-      <button type="button" id="btn-regStd" class="btn btn-success">REGISTRAR</button>
+      <a href="estudiante-reg.html" id="btn-regStd" class="btn btn-success">REGISTRAR</a>
     </div>
     <div class="pl pl-teacher col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
-      <div class="pl-img"><img src="images/teacher.png" alt=""></div>
+      <div class="pl-img"><img src="images/teacher.png" class="img-responsive center-block" alt="Imagen responsive"></div>
       <h3 class="title-teach">Profesores</h3>
       <p>Formulario de registro para los profesores pertenecientes a la Universidad de Nariño</p>
-      <button type="button" id="btn-regTeach" class="btn btn-success">REGISTRAR</button>
+      <a href="profesor-reg.html" id="btn-regTeach" class="btn btn-success">REGISTRAR</a>
+    </div>
+  </div>
+  <!-- Ventana para el Logeo de usuarios -->
+  <div class="modal fade mod-contorn" id="mod-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content login-dialog">
+        <!-- Cabecera de la ventana de Login -->
+        <div class="modal-header login-header">
+          <button type="button" class="close login-btn-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title login-title" id="myModalLabel">Login</h4>
+        </div>
+        <!-- Cuerpo de la ventana de Login -->
+        <div class="modal-body">
+          <form class="login-form" action="php/login.php" method="post">
+            <div class="form-group">
+              <label for="txt-cod">Codigo: </label>
+              <input type="number" id="txt-cod" placeholder="Codigo de Usuario" class="form-control" name="txt-cod">
+            </div>
+            <div class="form-group">
+              <label for="txt-password">Contraseña: </label>
+              <input type="password" id="txt-password" placeholder="Contraseña" class="form-control" name="txt-password">
+            </div>
+            <!-- Footer de la ventana de Login -->
+            <div class="modal-footer login-footer">
+              <button type="submit" class="btn btn-primary">INGRESAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="container-fluid">

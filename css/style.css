@@ -30,45 +30,6 @@ h3 {
   color: #3b3d3e;
 }
 
-.personal-description {
-  background: #264957;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.personal-form {
-  background: #77808a;
-  border-radius: 10px;
-  margin-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.title-form {
-  text-align: center;
-  font-family: monospace;
-}
-
-.pl-person {
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.img-person {
-  width: 190px;
-  height: 190px;
-  border-radius: 100%;
-  background: rgba(188, 190, 193, 0.71);
-  background-image: url(../images/user.png);
-  background-position: center;
-  background-size: contain;
-  margin: auto;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
 .login-button {
   margin-top: 20px;
   float: right;
@@ -95,7 +56,6 @@ h3 {
 }
 
 .pl-img {
-  margin: auto;
   margin-top: 10px;
   text-align: center;
 }
@@ -106,3 +66,38 @@ h3 {
 }
 
 .title-teach {color: #959595;}
+.login-dialog {background: rgba(22, 25, 46, 0.84);}
+.mod-contorn {background: rgba(215, 215, 215, 0.41);}
+
+.login-header {
+  background: #020412;
+  text-align: center;
+  border-bottom: 0;
+  padding: 5px 10px;
+}
+
+.login-title {
+  color: #999da4;
+  font-size: 20px;
+  font-family: courier;
+  font-weight: bold;
+}
+
+.login-btn-close {
+  color: #ffffff;
+  margin: auto;
+}
+
+.login-form {
+  color: #ffffff;
+}
+
+.login-footer {
+  text-align: center;
+  border-top: 0;
+  padding-bottom: 20px;
+}
+
+.modal-dialog {
+  margin-top: 200px;
+}
