@@ -100,6 +100,15 @@
               <label for="txt-password">Contraseña: </label>
               <input type="password" id="txt-password" placeholder="Contraseña" class="form-control" name="txt-password">
             </div>
+            <div class="form-group"> <!-- Tipo de Usuario -->
+              <label for="rd-tip">Tipo de Usuario:</label>
+              <div class="radio">
+                <label><input type="radio" name="rd-tip" value="1" checked="checked">Estudiante</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="rd-tip" value="2">Profesor</label>
+              </div>
+            </div>
             <!-- Footer de la ventana de Login -->
             <div class="modal-footer login-footer">
               <button type="submit" class="btn btn-primary">INGRESAR</button>

@@ -71,7 +71,7 @@
         <h1>Registro Estudiantil</h1>
       </header>
     </div>
-    <form action="php/registrar.php" method="post">
+    <form action="php/registrar.php?op=1" method="post">
       <!-- Descripción Personal -->
       <div class="col-sm-12 col-md-4 personal-description">
           <!-- Foto personal -->
@@ -137,6 +137,10 @@
           <div class="radio">
             <label><input type="radio" name="rd-gen">Otro</label>
           </div>
+        </div>
+        <div class="form-group elm"> <!-- Contraseña del Estudiante -->
+          <label for="txt-pass">Contraseña: </label>
+          <input type="password" id="txt-pass" placeholder="Contraseña Porfavor" class="form-control" name="txt-pass">
         </div>
         <button type="submit" name="btn-reg" class="btn btn-primary center-block">REGISTRAR</button>
     </form>

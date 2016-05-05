@@ -71,7 +71,7 @@
         <h1>Registro de Profesores</h1>
       </header>
     </div>
-    <form action="">
+    <form action="php/registrar.php?op=2" method="post">
       <!-- Descripción Personal -->
       <div class="col-sm-12 col-md-4 personal-description">
           <!-- Foto personal -->
@@ -85,30 +85,30 @@
           <!-- Información extra del estudiante -->
           <div class="col-sm-8 col-md-12 form-group">
               <label for="txt-description">Descripción Personal</label>
-              <textarea rows="9" placeholder="Comentanos más de ti.. :)" id="txt-description" class="form-control"></textarea>
+              <textarea rows="9" placeholder="Comentanos más de ti.. :)" id="txt-description" class="form-control" name="txt-description"></textarea>
           </div>
       </div>
       <!-- Descripción General -->
       <div class="col-sm-12 col-md-7 personal-form">
         <div class="form-group elm"> <!-- Nombres del Profesor -->
           <label for="txt-name">Nombres: </label>
-          <input type="text" id="txt-name" placeholder="Nombres completos porfavor" class="form-control">
+          <input type="text" id="txt-name" placeholder="Nombres completos porfavor" class="form-control" name="txt-name">
         </div>
         <div class="form-group elm"> <!-- Apellidos del Profesor -->
           <label for="txt-sname">Apellidos: </label>
-          <input type="text" id="txt-sname" placeholder="Apellidos completos porfavor" class="form-control">
+          <input type="text" id="txt-sname" placeholder="Apellidos completos porfavor" class="form-control" name="txt-sname">
         </div>
         <div class="form-group col-md-6 elm"> <!-- Codigo del Profesor -->
           <label for="txt-cod">Codigo: </label>
-          <input type="number" id="txt-cod" placeholder="Codigo Estudiantil" class="form-control">
+          <input type="number" id="txt-cod" placeholder="Codigo Estudiantil" class="form-control" name="txt-cod">
         </div>
         <div class="form-group col-md-6 elm"> <!--Especialidad del  Profesor -->
           <label for="txt-esp">Especialidad: </label>
-          <input type="text" id="txt-esp" placeholder="Area de Especialidad" class="form-control">
+          <input type="text" id="txt-esp" placeholder="Area de Especialidad" class="form-control" name="txt-esp">
         </div>
         <div class="form-group col-md-6 elm"> <!--Tipo de Documento de Identidad-->
           <label for="type-id">Tipo ID: </label>
-          <select class="form-control" id="type-id">
+          <select class="form-control" id="sl-id" name="sl-id">
             <option>Cedula</option>
             <option>Tarjeta de Identidad</option>
             <option>Pasaporte</option>
@@ -116,31 +116,35 @@
         </div>
         <div class="form-group col-md-6 elm"> <!--Numero de Documento de Identidad-->
           <label for="txt-id">Documento ID: </label>
-          <input type="number" id="txt-id" placeholder="Documento de Identidad" class="form-control">
+          <input type="number" id="txt-id" placeholder="Documento de Identidad" class="form-control" name="txt-id">
         </div>
         <div class="form-group col-md-6 elm"> <!--Numero Celular-->
           <label for="txt-cel">Celular: </label>
-          <input type="number" id="txt-cel" placeholder="Numero Celular" class="form-control">
+          <input type="number" id="txt-cel" placeholder="Numero Celular" class="form-control" name="txt-cel">
         </div>
         <div class="form-group col-md-6 elm"> <!-- Genero del Profesor -->
-          <label for="optradio">Genero:</label>
+          <label for="rd-gen">Genero:</label>
           <div class="radio">
-            <label><input type="radio" name="optradio">Femenino</label>
+            <label><input type="radio" name="rd-gen">Femenino</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="optradio">Masculino</label>
+            <label><input type="radio" name="rd-gen">Masculino</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="optradio">Otro</label>
+            <label><input type="radio" name="rd-gen">Otro</label>
           </div>
         </div>
         <div class="form-group elm"> <!--Facultad del Profesor-->
           <label for="sl-fact">Facultad: </label>
-          <select class="form-control" id="sl-fact">
+          <select class="form-control" id="sl-fact" name="sl-fact">
             <option>Ingeniería</option>
             <option>Economia</option>
             <option>Derecho</option>
           </select>
+      </div>
+      <div class="form-group elm"> <!-- Contraseña del Profesor -->
+        <label for="txt-pass">Contraseña: </label>
+        <input type="password" id="txt-pass" placeholder="Contraseña Porfavor" class="form-control" name="txt-pass">
       </div>
       <button type="submit" name="btn-reg" class="btn btn-primary center-block">REGISTRAR</button>
     </form>
