@@ -61,49 +61,72 @@
   </header>
   <div class="jumbotron cont-wallp">
     <figure class="container-fluid cont-wallp">
-      <img src="images/user_fond.png" alt="Fondo del Usuario" class="img-responsive center-block wallpaper-user"/>
+      <img src="images/user_fond.png" alt="Fondo del Usuario" class="img-responsive center-block wallpaper-user" id="img-wallpaper" name="imgWall"/>
     </figure>
-    <figure><img src="images/img_user.png" alt="Imagen de Usuario" class="img-responsive img-circle img-user col-xs-offset-1"/></figure>
+    <div class="container-fluid">
+      <figure class="col-xs-8"><img src="images/img_user.png" alt="Imagen de Usuario" class="img-responsive img-circle img-user col-xs-offset-1"/ id="img-user1"></figure>
+      <div class="div-file div-position col-xs-1 col-xs-offset-7 col-sm-offset-9 col-md-offset-10">
+        <span class="txt-button">CAMBIAR FONDO</span>
+        <input type="file" class="button-img" id="imgWall" name="imgWall"/>
+      </div>
+    </div>
   </div>
   <div class="container">
     <div class="row">
       <header class="col-md-12 title-form">
-        <h1>Registro Estudiantil</h1>
+        <h1>Registro de Usuarios</h1>
       </header>
     </div>
-    <form action="php/registrar.php?op=1" method="post">
+    <?php
+      $env=1;
+      if(isset($_GET['op'])){
+        $opc= $_GET['op'];
+        if($opc == 2) $env=2;
+      }
+    ?>
+    <form enctype="multipart/form-data" action="php/registrar.php?op=<?php echo $env ?>" method="post" onsubmit="return validacion()">
       <!-- Descripción Personal -->
-      <div class="col-sm-12 col-md-4 personal-description">
+      <div class="col-sm-12 col-md-4 personal-description" id="pers-descript">
           <!-- Foto personal -->
           <div class="col-sm-4 col-md-12 pl-person">
             <!-- <div class="img-person"></div> -->
             <figure><img src="images/user1.png" alt="Imagen de Usuario" class="img-responsive img-circle center-block img-person" id="img-usuario" /></figure>
-            <span class="btn btn-file btn-primary">
-                CAMBIAR<input type="file">
-            </span>
+            <div class="div-file center-block">
+              <span class="txt-button">SUBIR</span>
+              <input type="file" class="button-img" id="imgInp" name="imgInp"/>
+            </div>
           </div>
-          <!-- Información extra del estudiante -->
-          <div class="col-sm-8 col-md-12 form-group">
-              <label for="txt-description">Descripción Personal</label>
+          <!-- Información extra del Usuario -->
+          <div class="col-sm-8 col-md-12 form-group" id='info-ext'>
+              <label for="txt-description" class="control-label">Descripción Personal</label>
               <textarea rows="9" placeholder="Comentanos más de ti.. :)" id="txt-description" class="form-control" name="txt-description"></textarea>
+              <span class="txt-help"></span>
           </div>
       </div>
       <!-- Descripción General -->
       <div class="col-sm-12 col-md-7 personal-form">
-        <div class="form-group elm"> <!-- Nombres del Estudiante -->
-          <label for="txt-name">Nombres: </label>
+        <div class="form-group elm"> <!-- Nombres del Usuario -->
+          <label for="txt-name" class="control-label">Nombres: </label>
           <input type="text" id="txt-name" placeholder="Nombres completos porfavor" class="form-control" name="txt-name">
+          <span class="txt-help"></span>
         </div>
-        <div class="form-group elm"> <!-- Apellidos del Estudiante -->
-          <label for="txt-sname">Apellidos: </label>
+        <div class="form-group elm"> <!-- Apellidos del Usuario -->
+          <label for="txt-sname" class="control-label">Apellidos: </label>
           <input type="text" id="txt-sname" placeholder="Apellidos completos porfavor" class="form-control" name="txt-sname">
+          <span class="txt-help"></span>
         </div>
-        <div class="form-group col-md-6 elm"> <!-- Codigo del Estudiante -->
-          <label for="txt-cod">Codigo: </label>
+        <div class="form-group col-md-6 elm"> <!-- Codigo del Usuario -->
+          <label for="txt-cod" class="control-label">Codigo: </label>
           <input type="number" id="txt-cod" placeholder="Codigo Estudiantil" class="form-control" name="txt-cod">
+          <span class="txt-help"></span>
         </div>
-        <div class="form-group col-md-6 elm"> <!--Facultad del Estudiante-->
-          <label for="sl-fact">Facultad: </label>
+        <div class="form-group col-md-6 elm"> <!--Numero Celular-->
+          <label for="txt-cel" class="control-label">Celular: </label>
+          <input type="number" id="txt-cel" placeholder="Numero Celular" class="form-control" name="txt-cel">
+          <span class="txt-help"></span>
+        </div>
+        <div class="form-group elm"> <!--Facultad del Usuario-->
+          <label for="sl-fact" class="control-label">Facultad: </label>
           <select class="form-control" id="sl-fact" name="sl-fact">
             <option>Ingeniería</option>
             <option>Economia</option>
@@ -111,7 +134,7 @@
           </select>
         </div>
         <div class="form-group col-md-6 elm"> <!--Tipo de Documento de Identidad-->
-          <label for="type-id">Tipo ID: </label>
+          <label for="type-id" class="control-label">Tipo ID: </label>
           <select class="form-control" id="type-id" name="sl-id">
             <option>Cedula</option>
             <option>Tarjeta de Identidad</option>
@@ -119,33 +142,40 @@
           </select>
         </div>
         <div class="form-group col-md-6 elm"> <!--Numero de Documento de Identidad-->
-          <label for="txt-id">Documento ID: </label>
+          <label for="txt-id" class="control-label">Documento ID: </label>
           <input type="number" id="txt-id" placeholder="Documento de Identidad" class="form-control" name="txt-id">
+          <span class="txt-help"></span>
         </div>
-        <div class="form-group col-md-6 elm"> <!--Numero Celular-->
-          <label for="txt-cel">Celular: </label>
-          <input type="number" id="txt-cel" placeholder="Numero Celular" class="form-control" name="txt-cel">
-        </div>
-        <div class="form-group col-md-6 elm"> <!-- Genero del Estudiante -->
-          <label for="optradio">Genero:</label>
+        <div class="form-group elm" id="rdg-gen"> <!-- Genero del Usuario -->
+          <label for="optradio" class="control-label">Genero:</label>
           <div class="radio">
-            <label><input type="radio" name="rd-gen">Femenino</label>
+            <label><input type="radio" name="rd-gen" value="Femenino">Femenino</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="rd-gen">Masculino</label>
+            <label><input type="radio" name="rd-gen" value="Masculino">Masculino</label>
           </div>
           <div class="radio">
-            <label><input type="radio" name="rd-gen">Otro</label>
+            <label><input type="radio" name="rd-gen" value="Otro" checked="checked">Otro</label>
           </div>
+          <span class="txt-help"></span>
         </div>
-        <div class="form-group elm"> <!-- Contraseña del Estudiante -->
-          <label for="txt-pass">Contraseña: </label>
+        <div class="form-group elm hide"> <!--Especialidad del Profesor-->
+          <label for="txt-esp" class="control-label">Especialidad: </label>
+          <input type="text" id="txt-esp" placeholder="Area de Especialidad" class="form-control" name="txt-esp">
+          <span class="txt-help"></span>
+        </div>
+        <div class="form-group elm"> <!-- Contraseña del Usuario -->
+          <label for="txt-pass" class="control-label">Contraseña: </label>
           <input type="password" id="txt-pass" placeholder="Contraseña Porfavor" class="form-control" name="txt-pass">
+          <span class="txt-help"></span>
         </div>
         <button type="submit" name="btn-reg" class="btn btn-primary center-block">REGISTRAR</button>
     </form>
   </div>
   <!-- Elementos JavaScirpt para la interactividad-->
+  <script src="js/inicio.js" type="text/javascript"></script>
+  <script src="js/valid-form.js"type="text/javascript"></script>
+  <script src="js/open-img.js" type="text/javascript"></script>
   <script src="js/jquery.js" type="text/javascript"></script>
   <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </body>

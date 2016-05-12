@@ -71,13 +71,13 @@
       <div class="pl-img"><img src="images/student.png" class="img-responsive center-block" alt="Imagen responsive"></div>
       <h3>Estudiantes</h3>
       <p>Formulario de registro para los estudiantes pertenecientes a la Universidad de Nariño</p>
-      <a href="estudiante-reg.html" id="btn-regStd" class="btn btn-success">REGISTRAR</a>
+      <a href="registro.php?op=1" id="btn-regStd" class="btn btn-success">REGISTRAR</a>
     </div>
     <div class="pl pl-teacher col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-2">
       <div class="pl-img"><img src="images/teacher.png" class="img-responsive center-block" alt="Imagen responsive"></div>
       <h3 class="title-teach">Profesores</h3>
       <p>Formulario de registro para los profesores pertenecientes a la Universidad de Nariño</p>
-      <a href="profesor-reg.html" id="btn-regTeach" class="btn btn-success">REGISTRAR</a>
+      <a href="registro.php?op=2" id="btn-regTeach" class="btn btn-success">REGISTRAR</a>
     </div>
   </div>
   <!-- Ventana para el Logeo de usuarios -->
