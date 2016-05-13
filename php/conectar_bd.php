@@ -1,5 +1,10 @@
 <?php
-// Conectando, seleccionando la base de datos
-$link = mysql_connect('localhost', 'root', 'nimp3') or die('No se pudo conectar: ' . mysql_error());
-mysql_select_db('udenar',$link) or die('No se pudo seleccionar la base de datos');
+$enlace = mysqli_connect("", "", "", "");
+
+if (!$enlace) {
+  echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+  echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+  echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+  exit;
+}
 ?>

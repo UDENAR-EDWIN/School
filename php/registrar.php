@@ -1,6 +1,6 @@
 <?php
 session_start();
-  require("conectar_bd.php");
+  include 'conectar_bd.php';
 
   // Bandera para determinar si es Profesor o Estudiante
   if(isset($_GET['op'])){
@@ -24,9 +24,9 @@ session_start();
     // Validación de Usuarios Existentes
     $query = "SELECT * FROM Estudiantes
                       WHERE cod_estudiante='$codigo'";
-    $result=mysql_query($query);
+    $result=mysqli_query($enlace,$query);
 
-    if(!$est = mysql_fetch_array($result)){
+    if(!$est = mysqli_fetch_array($result)){
 
       $img_path = "user-images/";
       $img_path = $img_path . basename( $_FILES['imgInp']['name']);
@@ -49,14 +49,14 @@ session_start();
                                     '$apellidos', '$facultad', '$tipoID',
                                     '$docID', '$celular', '$genero', '$descripcion',
                                     '$img_path', '$wall_path');";
-      mysql_query($query);
+      mysqli_query($enlace,$query);
       session_start();
       $_SESSION['user']=$codigo;
       header('Location: ../personal.php');
     }
     else{
       echo "<script>alert('Este usuario ya existe, Porfavor registrese con otro Usuario');</script>";
-      echo "<script>location.href='../estudiante-reg.html'</script>";
+      echo "<script>location.href='../registro.php'</script>";
     }
   }
   else if ($op ==2){
@@ -64,9 +64,9 @@ session_start();
     // Validación de Usuarios Existentes
     $query = "SELECT * FROM Profesores
                       WHERE cod_profesor='$codigo'";
-    $result=mysql_query($query);
+    $result=mysqli_query($enlace,$query);
 
-    if(!$est = mysql_fetch_array($result)){
+    if(!$est = mysqli_fetch_array($result)){
 
       $img_path = "user-images/";
       $img_path = $img_path . basename( $_FILES['imgInp']['name']);
@@ -89,20 +89,20 @@ session_start();
                                     '$apellidos', '$facultad', '$tipoID',
                                     '$docID', '$celular', '$genero', '$descripcion',
                                     '$especialidad', '$img_path', '$wall_path');";
-      mysql_query($query);
+      mysqli_query($enlace,$query);
       session_start();
       $_SESSION['user']=$codigo;
       header('Location: ../personal.php');
     }
     else{
       echo "<script>alert('Este usuario ya existe, Porfavor registrese con otro Usuario');</script>";
-      echo "<script>location.href='../estudiante-reg.html'</script>";
+      echo "<script>location.href='../registro.php'</script>";
     }
   }
   else {
     echo "<script>alert('No se puede determinar si es Estudiante o Profesor');</script>";
-    echo "<script>location.href='../estudiante-reg.html'</script>";
+    echo "<script>location.href='../registro.php'</script>";
   }
   // Cerrar la conexión
-  mysql_close($link);
+  mysqli_close($enlace);
 ?>

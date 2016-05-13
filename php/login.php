@@ -1,6 +1,7 @@
 <?php
 session_start();
-  require("conectar_bd.php");
+  include 'conectar_bd.php';
+
 
   // Variables para el control del usuario
   $codigo= $_POST["txt-cod"];
@@ -11,9 +12,9 @@ session_start();
     // Validación de Estudiantes
     $query = "SELECT * FROM Estudiantes
                       WHERE cod_estudiante='$codigo'";
-    $result=mysql_query($query);
+    $result=mysqli_query($enlace, $query);
 
-    if($est = mysql_fetch_array($result)){
+    if($est = mysqli_fetch_array($result)){
       if($pass == $est['pass_estudiante']){
         $_SESSION['user']=$est['cod_estudiante'];
         header('Location: ../personal.php');
@@ -32,9 +33,9 @@ session_start();
     // Validación de Profesores
     $query = "SELECT * FROM Profesores
                       WHERE cod_profesor='$codigo'";
-    $result=mysql_query($query);
+    $result=mysqli_query($enlace,$query);
 
-    if($est = mysql_fetch_array($result)){
+    if($est = mysqli_fetch_array($result)){
       if($pass == $est['pass_profesor']){
         $_SESSION['user']=$est['cod_profesor'];
         header('Location: ../personal.php');
@@ -50,5 +51,5 @@ session_start();
     }
   }
   // Cerrar la conexión
-  mysql_close($link);
+  mysqli_close($enlace);
 ?>
